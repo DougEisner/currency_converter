@@ -1,3 +1,9 @@
+git init
+git add README.md
+git commit -m "Add README"
+git remote add origin git@github.com:<username>/<project>.git
+git push -u origin master
+
 Normal Mode
 
 Must satisfy all of the requirements below. You may tackle these in any order,
