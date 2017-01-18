@@ -1,44 +1,36 @@
 class Currency
-  attr_reader = @currency_code, @amount
+  attr_reader :currency_code, :amount
 
-  def initialize (currency_code, amount)
+  def initialize(currency_code, amount)
     @currency_code = currency_code
     @amount = amount
   end
 
-  def check_if_same_currency (currency_object1, currency_object2)
-    if currency_object1.currency_code == currency_object2.currency_code
-      true
-    else
+  def check_if_same_currency(currency)
+    if @currency_code != currency.currency_code
       raise DifferentCurrencyCodeError, "Different currency codes entered"
     end
   end
 
-  def + add_to_another_currency_object (currency_object1, currency_object2, amount_to_add)
-    if check_if_same_currency
-    else
-      Currency.new(@amount + second_currency.amount, @currency_code)
-    def
-    end
+  def +(value)
+    check_if_same_currency(value)
+    Currency.new(@amount + value.amount, @currency_code)
   end
 
-
-  def subtract_from_another_currency_object
-    if check_if_same_currency
-    else
-      Currency.new(@amount + second_currency.amount, @currency_code)
-    def
-    end
+  def -(value)
+    check_if_same_currency(value)
+    Currency.new(@amount - value.amount, @currency_code)
   end
 
-  
-
-  def multiply_int_or_fl
+  def *(value)
+    check_if_same_currency(value)
+    Currency.new(@amount * value.amount, @currency_code)
   end
 
+  def to_s
+    "Currency(amount=#{@amount}, currency_code=#{@currency_code})"
+  end
 end
-
-
 
 # Must be created with an amount and a currency code.
 # Must equal another Currency object with the same amount and currency code.
