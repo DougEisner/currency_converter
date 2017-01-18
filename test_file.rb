@@ -21,4 +21,17 @@ class Currency
 #   end
 end
 
-puts wallet = Currency.new('USD', 10)
+#puts wallet = Currency.new('USD', 10)
+
+rates = {
+  'USD' => {'USD' => 1.00000, 'EUR' => 0.93358,	'GBP' => 0.80642},
+  'EUR' => {'USD' => 1.07114, 'EUR' => 1.00000,	'GBP' => 0.86379},
+  'GBP' => {'USD' => 1.24005, 'EUR' => 1.15769,	'GBP' =>	1.00000}
+}
+
+
+rates_array =[]
+rates.map {|k,v| rates_array << k}
+puts rates_array
+
+#if currency_code != rates.each[k][]
